@@ -5,7 +5,7 @@
           <h1> Distant Mentoring Program</h1>
           <button> Download Free guidebook <i class="fas fa-long-arrow-alt-right"></i></button>
       </div>
-      .
+
   </div>
 </template>
 
@@ -44,7 +44,6 @@ export default {
             width: 300px;
             font-weight: bold
         }
-
-        
-    };
+ };
+ 
 </style>
