@@ -43,6 +43,9 @@ export default {
       rightHeader :[
         {
           icon: "fas fa-shopping-cart"
+        },
+        {
+          icon: "fas fa-user-circle"
         }
       ]
     };
