@@ -41,6 +41,32 @@
           <p>Opening up more opportunities in front of you to get the ticket to more enjoyable dor in life. Getting equipped with new skills for new sets of insights into your career.</p>
           <button> Download free guidebook</button>
       </div>
+      <div class="courses">
+          <div class="courses-title">
+              <h4>join maxcoach at best</h4>
+              <h2>Latest Online Courses</h2>
+          </div>
+          <div class="price-courses">
+              <ul>
+                  <li v-for="(cards, index) in cards" :key="index">
+                    <div class="card-image">
+                        <img :src="require(`../assets/img/${cards.image}`)" alt="">
+                        <div v-if="cards.price === '0.00'" class="free">
+                            <span>free</span>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        <h3 class="price"> ${{ cards.price }}</h3>
+                        <h4 class="title-course"> {{ cards.course}}</h4>
+                        <div class="register">
+                            <p class="lesson"> <span><i class="fas fa-file-alt"></i> {{ cards.lessons }} Lessons</span></p>
+                            <p class="students"> <span> <i class="fas fa-user"></i> {{ cards.students}} Students</span></p>
+                        </div>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
   </div>
   
 </template>
@@ -48,6 +74,9 @@
 <script>
 export default {
     name:'secondSectionMain',
+    props: {
+        cards: Array,
+    }
 }
 </script>
 
@@ -101,6 +130,7 @@ export default {
             width: 169px;
             padding: 5px;
         }
+        
     }
     .stats{
         width: 60%;
@@ -127,18 +157,15 @@ export default {
         }
     }
     .upgrade-text {
-        width: 30%;
+        width: 35%;
     }
     .image-upgrade {
         position: relative;
-        width: 70%;
+        width: 65%;
 
         .upgrade{
-            width: 70%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 90%;
+            position: relative;
             z-index: 10;
         }
         .youtube{
@@ -149,9 +176,58 @@ export default {
         }
         .cross-3 {
             position: absolute;
-            bottom: -77%;
-            left: 68%;
+            bottom: -18%;
+            right: 8%;
         }
+        .shape-5 {
+        position: absolute;
+        left: -100px;
+        top: 35px;
+        z-index: -1;
+            }
+       } 
+       
+    .courses {
+        margin-top: 200px;
+        width: 100%;
+    }
+
+    .price-courses{
+
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            justify-content: space-between;
+
+            li{
+                flex-basis: 30%;
+
+                .card-image{
+                    position: relative;
+                }
+
+                img{
+                    width: 100%;
+                }
+                .free {
+                    color: white;
+                    background-color: #ee7455;
+                    width: 72px;
+                    height: 30px;
+                    text-transform: uppercase;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+        
     }
 }
 </style>
